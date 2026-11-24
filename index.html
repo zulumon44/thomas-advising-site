@@ -3,321 +3,72 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Thomas Advising helps organizations grow, operate, and bring people together with thoughtful strategy and dependable execution.">
-  <title>Thomas Advising — Strategy &amp; Hands-on Support</title>
+  <meta name="description" content="Thomas Advising provides hands-on operations, project, event, and digital marketing support for growing organizations.">
+  <title>Thomas Advising — Operations, Events & Marketing</title>
   <style>
-    :root {
-      color-scheme: light;
-      --ink: #153b39;
-      --accent: #00655d;
-      --deep: #153f3c;
-      --line: #bfd3cf;
-      --wash: #eaf5f1;
-      --paper: #fdfefc;
-      --white: #fff;
-      --muted: #54716d;
-      --focus: #90631b;
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    section[id] { scroll-margin-top: 90px; }
-    body { margin: 0; color: var(--ink); background: var(--paper); font: 16px/1.65 var(--sans); }
-    a { color: inherit; text-underline-offset: .22em; }
-    a:hover { text-decoration-thickness: 2px; }
-    :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
-    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
-    .skip { position: absolute; left: 20px; top: -60px; padding: 10px 14px; z-index: 10; background: white; }
-    .skip:focus { top: 10px; }
-    .site-header { position: sticky; top: 0; z-index: 5; background: rgb(253 254 252 / 94%); border-bottom: 1px solid rgb(191 211 207 / 70%); backdrop-filter: blur(14px); }
-    .header-row { min-height: 78px; display: flex; justify-content: space-between; align-items: center; gap: 28px; }
-    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); font: 700 1.2rem/1 var(--serif); text-decoration: none; white-space: nowrap; }
-    .brand-logo { width: 46px; height: 46px; flex: 0 0 46px; object-fit: contain; }
-    nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 38px); }
-    nav a { color: var(--ink); font-size: .9rem; font-weight: 550; text-decoration: none; }
-    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px; border: 1px solid var(--accent); border-radius: 4px; background: var(--accent); color: var(--white); font: 650 .94rem/1.2 var(--sans); text-decoration: none; transition: background .18s ease, transform .18s ease; }
-    .button:hover { background: var(--ink); border-color: var(--ink); transform: translateY(-1px); }
-    .button svg { width: 16px; height: 16px; }
-    .header-cta { min-height: 42px; padding: 10px 16px; font-size: .88rem; }
-    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--accent); font-size: .72rem; font-weight: 750; letter-spacing: .16em; line-height: 1.3; text-transform: uppercase; }
-    .eyebrow::before { width: 28px; height: 1px; content: ""; background: currentColor; }
-    .hero { position: relative; overflow: hidden; background: var(--wash); border-bottom: 1px solid var(--line); }
-    .hero::after { position: absolute; right: -120px; bottom: -260px; width: 520px; height: 520px; border: 1px solid rgb(0 101 93 / 13%); border-radius: 50%; content: ""; box-shadow: 0 0 0 50px rgb(0 101 93 / 3%), 0 0 0 100px rgb(0 101 93 / 2%); }
-    .hero-grid { position: relative; z-index: 1; min-height: 520px; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 5%; padding-block: 54px; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.08; text-wrap: balance; }
-    h1 { max-width: 690px; margin-bottom: 21px; font-size: clamp(3rem, 5.5vw, 4.9rem); letter-spacing: -.055em; }
-    .hero-copy { max-width: 590px; margin: 0; color: #345955; font-size: clamp(1.08rem, 1.55vw, 1.26rem); line-height: 1.65; }
-    .hero-actions { margin-top: 31px; }
-    .hero-note { margin: 17px 0 0; color: var(--muted); font-size: .82rem; }
-    .hero-art { position: relative; min-height: 390px; display: grid; place-items: center; }
-    .orbit { position: absolute; width: 350px; aspect-ratio: 1; border: 1px solid rgb(0 101 93 / 22%); border-radius: 50%; }
-    .orbit::before, .orbit::after { position: absolute; inset: 28px; border: 1px solid rgb(0 101 93 / 13%); border-radius: 50%; content: ""; }
-    .orbit::after { inset: 58px; }
-    .orbit-dot { position: absolute; top: 14%; right: 19%; width: 13px; height: 13px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 8px rgb(0 101 93 / 9%); }
-    .overview-card { position: relative; width: min(100%, 355px); padding: 27px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); box-shadow: 0 24px 60px rgb(21 59 57 / 12%); transform: rotate(-2deg); }
-    .card-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding-bottom: 19px; border-bottom: 1px solid #e1ece8; }
-    .card-top strong { font: 500 1.18rem/1.2 var(--serif); }
-    .status { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-    .status::before { width: 7px; height: 7px; border-radius: 50%; background: #55a897; content: ""; }
-    .overview-row { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 12px; padding-top: 18px; }
-    .row-icon { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--wash); color: var(--accent); }
-    .row-icon svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-    .row-label { font-size: .84rem; font-weight: 650; }
-    .row-sub { display: block; margin-top: 2px; color: var(--muted); font-size: .7rem; font-weight: 400; }
-    .row-no { color: #86a29c; font-size: .73rem; }
-    .floating-note { position: absolute; right: -18px; bottom: 23px; width: 190px; padding: 15px 17px; border: 1px solid var(--line); border-radius: 5px; background: var(--white); box-shadow: 0 12px 28px rgb(21 59 57 / 9%); transform: rotate(3deg); }
-    .floating-note small { display: block; color: var(--muted); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
-    .floating-note strong { display: block; margin-top: 4px; font: 500 1rem/1.3 var(--serif); }
-    .intro-band { border-bottom: 1px solid var(--line); background: var(--white); }
-    .intro-band-inner { min-height: 115px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-    .intro-band p { max-width: 590px; margin: 0; font: 500 clamp(1.08rem, 2vw, 1.35rem)/1.4 var(--serif); }
-    .intro-band span { color: var(--muted); font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-    .section { padding-block: clamp(76px, 10vw, 126px); }
-    .section-heading { max-width: 680px; margin-bottom: 47px; }
-    .section-heading h2 { margin-bottom: 16px; font-size: clamp(2.5rem, 4.5vw, 4rem); letter-spacing: -.045em; }
-    .section-heading > p:last-child { max-width: 600px; margin-bottom: 0; color: var(--muted); font-size: 1.02rem; }
-    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-    .service-card { min-height: 308px; display: flex; flex-direction: column; padding: 29px 28px 26px; border: 1px solid var(--line); border-radius: 6px; background: var(--white); transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
-    .service-card:hover { border-color: #82aaa2; box-shadow: 0 16px 36px rgb(21 59 57 / 7%); transform: translateY(-3px); }
-    .service-kicker { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; color: var(--accent); font-size: .69rem; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
-    .service-symbol { width: 39px; height: 39px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; }
-    .service-symbol svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .service-card h3 { margin-bottom: 13px; font-size: 1.65rem; letter-spacing: -.025em; }
-    .service-card p { margin-bottom: 18px; color: var(--muted); font-size: .91rem; }
-    .service-list { display: flex; flex-wrap: wrap; gap: 7px; margin: auto 0 0; padding: 0; list-style: none; }
-    .service-list li { padding: 5px 9px; border-radius: 3px; background: var(--wash); color: #375f58; font-size: .7rem; font-weight: 600; }
-    .operations { background: var(--deep); color: var(--white); }
-    .operations .eyebrow { color: #a8d4c9; }
-    .operations .section-heading > p:last-child { color: #d0e1dc; }
-    .ops-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 8%; align-items: start; }
-    .ops-grid .section-heading { position: sticky; top: 125px; margin: 0; }
-    .ops-grid .section-heading h2 { max-width: 460px; }
-    .ops-steps { border-top: 1px solid rgb(234 245 241 / 28%); }
-    .ops-step { display: grid; grid-template-columns: 52px 1fr; gap: 18px; padding: 27px 0; border-bottom: 1px solid rgb(234 245 241 / 28%); }
-    .step-no { color: #a8d4c9; font: 500 1rem/1.4 var(--serif); }
-    .ops-step h3 { margin: 0 0 8px; font-size: 1.45rem; }
-    .ops-step p { margin: 0; color: #d0e1dc; font-size: .91rem; }
-    .ops-foot { margin: 26px 0 0 70px; color: #a8d4c9; font-size: .79rem; }
-    .events { display: grid; grid-template-columns: .85fr 1.15fr; gap: 9%; align-items: center; }
-    .event-visual { position: relative; min-height: 355px; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: var(--wash); }
-    .event-visual::before { position: absolute; top: -75px; left: -60px; width: 265px; height: 265px; border: 1px solid rgb(0 101 93 / 22%); border-radius: 50%; content: ""; box-shadow: 0 0 0 32px rgb(0 101 93 / 4%), 0 0 0 64px rgb(0 101 93 / 3%); }
-    .event-visual::after { position: absolute; right: -110px; bottom: -165px; width: 310px; height: 310px; border: 1px solid rgb(0 101 93 / 18%); border-radius: 50%; content: ""; box-shadow: 0 0 0 35px rgb(0 101 93 / 4%); }
-    .event-sheet { position: absolute; z-index: 1; top: 50%; left: 50%; width: 70%; max-width: 300px; padding: 25px; border: 1px solid var(--line); border-radius: 5px; background: var(--white); box-shadow: 0 20px 40px rgb(21 59 57 / 12%); transform: translate(-50%, -50%) rotate(2deg); }
-    .event-sheet small { color: var(--accent); font-size: .66rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
-    .event-sheet h3 { margin: 12px 0 20px; font-size: 1.65rem; }
-    .event-line { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-top: 1px solid #e3ede9; color: var(--muted); font-size: .76rem; }
-    .event-line b { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
-    .events-copy h2 { margin-bottom: 18px; font-size: clamp(2.5rem, 4.2vw, 3.7rem); letter-spacing: -.045em; }
-    .events-copy > p:not(.eyebrow) { max-width: 590px; color: var(--muted); }
-    .event-points { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; margin-top: 28px; }
-    .event-points span { display: flex; align-items: center; gap: 10px; font-size: .84rem; font-weight: 620; }
-    .event-points span::before { width: 6px; height: 6px; flex: 0 0 6px; border-radius: 50%; background: var(--accent); content: ""; }
-    .experience { padding-block: 75px; border-block: 1px solid var(--line); background: var(--wash); }
-    .experience-inner { display: grid; grid-template-columns: .7fr 1.3fr; gap: 8%; align-items: center; }
-    .experience h2 { margin: 0; font-size: clamp(2.2rem, 4vw, 3.3rem); letter-spacing: -.04em; }
-    .experience-copy { max-width: 730px; }
-    .experience-copy p { margin: 0; color: #345955; font-size: .98rem; }
-    .credentials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-    .credentials span { padding: 7px 11px; border: 1px solid #b4cbc5; border-radius: 3px; color: #375f58; font-size: .72rem; font-weight: 650; }
-    .contact { padding-block: clamp(75px, 9vw, 110px); }
-    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 9%; align-items: start; }
-    .contact-copy h2 { margin-bottom: 16px; font-size: clamp(2.5rem, 4.6vw, 4rem); letter-spacing: -.045em; }
-    .contact-copy > p:not(.eyebrow) { max-width: 440px; color: var(--muted); }
-    .contact-aside { margin-top: 28px; padding-top: 19px; border-top: 1px solid var(--line); color: var(--muted); font-size: .79rem; }
-    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 28px; border: 1px solid var(--line); border-radius: 6px; background: var(--white); box-shadow: 0 12px 34px rgb(21 59 57 / 5%); }
-    .field { display: flex; flex-direction: column; gap: 5px; color: var(--ink); font-size: .78rem; font-weight: 700; }
-    .field.full { grid-column: 1 / -1; }
-    .honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
-    input, select, textarea { width: 100%; min-height: 46px; border: 1px solid #9db7b0; border-radius: 3px; padding: 10px 12px; background: #fcfdfc; color: var(--ink); font: 400 .9rem/1.4 var(--sans); }
-    textarea { min-height: 112px; resize: vertical; }
-    .contact-form .button { margin-top: 3px; justify-self: start; }
-    .form-note { grid-column: 1 / -1; margin: -7px 0 0; color: var(--muted); font-size: .68rem; }
-    footer { background: var(--paper); }
-    .footer-row { min-height: 86px; display: flex; justify-content: space-between; align-items: center; gap: 20px; color: var(--muted); font-size: .76rem; }
-    .footer-brand { color: var(--ink); font: 700 1rem/1 var(--serif); }
-    @media (max-width: 850px) {
-      .hero-grid { min-height: auto; grid-template-columns: 1fr .8fr; gap: 2%; padding-block: 65px; }
-      .hero-art { min-height: 330px; }
-      .orbit { width: 285px; }
-      .floating-note { right: -8px; bottom: 0; }
-      .ops-grid { gap: 6%; }
-      .service-card { padding-inline: 22px; }
-    }
-    @media (max-width: 700px) {
-      .wrap { width: min(100% - 36px, 560px); }
-      section[id] { scroll-margin-top: 132px; }
-      .header-row { min-height: 70px; flex-wrap: wrap; gap: 12px; padding-block: 12px; }
-      nav { order: 3; width: 100%; justify-content: space-between; gap: 12px; padding: 3px 0 4px; }
-      nav a { font-size: .78rem; }
-      .header-cta { margin-left: auto; }
-      .hero-grid { grid-template-columns: 1fr; padding-block: 62px 42px; }
-      h1 { font-size: clamp(2.8rem, 10.5vw, 4.2rem); }
-      .hero-art { min-height: 290px; margin-top: 18px; }
-      .brand-logo { width: 40px; height: 40px; flex-basis: 40px; }
-      .orbit { width: 255px; }
-      .overview-card { width: min(82%, 330px); }
-      .floating-note { right: 0; bottom: 0; }
-      .intro-band-inner { min-height: auto; align-items: flex-start; flex-direction: column; gap: 11px; padding-block: 23px; }
-      .section { padding-block: 72px; }
-      .section-heading { margin-bottom: 32px; }
-      .service-grid { grid-template-columns: 1fr; gap: 12px; }
-      .service-card { min-height: 0; padding: 24px; }
-      .service-kicker { margin-bottom: 21px; }
-      .service-list { margin-top: 5px; }
-      .ops-grid, .events, .experience-inner, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
-      .ops-grid .section-heading { position: static; }
-      .ops-foot { margin-left: 0; }
-      .event-visual { min-height: 300px; }
-      .experience-inner { gap: 22px; }
-      .experience { padding-block: 52px; }
-      .contact-grid { gap: 28px; }
-    }
-    @media (max-width: 440px) {
-      .brand { font-size: 1.05rem; }
-      .header-cta { min-height: 38px; padding: 8px 11px; font-size: .78rem; }
-      .hero-copy { font-size: 1rem; }
-      .event-points, .contact-form { grid-template-columns: 1fr; }
-      .field.full, .form-note { grid-column: auto; }
-      .contact-form { padding: 20px; }
-      .footer-row { align-items: flex-start; flex-direction: column; justify-content: center; gap: 9px; padding-block: 20px; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+    :root{color-scheme:light;--ink:#153b39;--accent:#00655d;--deep:#153f3c;--line:#bfd3cf;--wash:#eaf5f1;--paper:#fdfefc;--white:#fff;--muted:#54716d;--focus:#90631b;--serif:Georgia,"Times New Roman",serif;--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans)}a{color:inherit;text-underline-offset:.22em}.wrap{width:min(1160px,calc(100% - 48px));margin-inline:auto}.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--accent);font-size:.72rem;font-weight:750;letter-spacing:.16em;text-transform:uppercase}.eyebrow:before{width:28px;height:1px;content:"";background:currentColor}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;text-wrap:balance}h1{max-width:670px;margin-bottom:22px;font-size:clamp(3rem,6vw,5rem);letter-spacing:-.055em}h2{font-size:clamp(2.35rem,4.3vw,3.6rem);letter-spacing:-.045em}h3{font-size:1.6rem;letter-spacing:-.02em}.button{min-height:49px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 20px;border:1px solid var(--accent);border-radius:4px;background:var(--accent);color:white;font:650 .92rem/1.2 var(--sans);text-decoration:none;transition:.18s ease}.button:hover{background:var(--ink);transform:translateY(-1px)}.button svg{width:16px;height:16px}.site-header{position:sticky;top:0;z-index:5;border-bottom:1px solid rgb(191 211 207 / 70%);background:rgb(253 254 252 / 95%);backdrop-filter:blur(14px)}.header-row{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;color:var(--ink);font:700 1.2rem/1 var(--serif);text-decoration:none;white-space:nowrap}.brand img{width:44px;height:44px;object-fit:contain}nav{display:flex;align-items:center;gap:clamp(18px,3vw,38px)}nav a{font-size:.88rem;font-weight:600;text-decoration:none}.header-cta{min-height:42px;padding:10px 16px;font-size:.86rem}.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:var(--wash)}.hero:after{position:absolute;right:-160px;bottom:-310px;width:620px;height:620px;border:1px solid rgb(0 101 93 / 13%);border-radius:50%;content:"";box-shadow:0 0 0 55px rgb(0 101 93 / 3%),0 0 0 110px rgb(0 101 93 / 2%)}.hero-grid{position:relative;z-index:1;min-height:540px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:5%;padding-block:58px}.hero-copy{max-width:590px;margin:0;color:#345955;font-size:clamp(1.05rem,1.5vw,1.2rem)}.hero-actions{margin-top:28px}.microcopy{margin:12px 0 0;color:var(--muted);font-size:.77rem}.hero-art{position:relative;min-height:390px;display:grid;place-items:center}.orbit{position:absolute;width:350px;aspect-ratio:1;border:1px solid rgb(0 101 93 / 22%);border-radius:50%}.orbit:before,.orbit:after{position:absolute;inset:30px;border:1px solid rgb(0 101 93 / 13%);border-radius:50%;content:""}.orbit:after{inset:62px}.focus-card{position:relative;width:min(100%,370px);padding:27px;border:1px solid var(--line);border-radius:8px;background:white;box-shadow:0 24px 60px rgb(21 59 57 / 12%);transform:rotate(-2deg)}.focus-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid #e1ece8}.focus-top strong{font:500 1.2rem/1.2 var(--serif)}.pill{padding:5px 9px;border-radius:3px;background:var(--wash);color:var(--accent);font-size:.65rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase}.focus-row{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;padding-top:17px}.icon{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--wash);color:var(--accent);font-weight:700}.focus-row strong{display:block;font-size:.84rem}.focus-row small{display:block;color:var(--muted);font-size:.72rem}.trust-strip{border-bottom:1px solid var(--line);background:white}.trust-row{min-height:94px;display:flex;align-items:center;justify-content:space-between;gap:24px}.trust-row p{max-width:390px;margin:0;font:500 1.1rem/1.35 var(--serif)}.trust-points{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}.trust-points span{padding:7px 10px;border:1px solid var(--line);border-radius:3px;color:#375f58;font-size:.68rem;font-weight:650}.section{padding-block:clamp(74px,9vw,112px)}.section-intro{max-width:690px;margin-bottom:40px}.section-intro p:last-child{max-width:600px;margin-bottom:0;color:var(--muted)}.operations{background:var(--deep);color:white}.operations .eyebrow{color:#a8d4c9}.operations .section-intro>p:last-child{color:#d0e1dc}.ops-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:8%;align-items:start}.ops-layout h2{max-width:450px}.offer-list{border-top:1px solid rgb(234 245 241 / 28%)}.offer{display:grid;grid-template-columns:42px 1fr;gap:15px;padding:23px 0;border-bottom:1px solid rgb(234 245 241 / 28%)}.offer-no{color:#a8d4c9;font:500 1rem/1.4 var(--serif)}.offer h3{margin:0 0 7px;font-size:1.35rem}.offer p{margin:0;color:#d0e1dc;font-size:.9rem}.ops-foot{margin:21px 0 0 57px;color:#a8d4c9;font-size:.78rem}.support{display:grid;grid-template-columns:1fr 1fr;gap:18px}.support-card{min-height:285px;padding:30px;border:1px solid var(--line);border-radius:6px;background:white}.support-card .number{display:block;margin-bottom:25px;color:var(--accent);font-size:.7rem;font-weight:750;letter-spacing:.14em;text-transform:uppercase}.support-card p{max-width:460px;color:var(--muted);font-size:.93rem}.support-card ul{display:flex;flex-wrap:wrap;gap:7px;margin:19px 0 0;padding:0;list-style:none}.support-card li{padding:5px 9px;border-radius:3px;background:var(--wash);color:#375f58;font-size:.69rem;font-weight:650}.process{background:var(--wash);border-block:1px solid var(--line)}.process-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:8%;align-items:start}.process-grid h2{max-width:440px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding-top:18px;border-top:1px solid #9bbab2}.step b{display:block;margin-bottom:11px;color:var(--accent);font:500 1rem/1.2 var(--serif)}.step strong{display:block;margin-bottom:7px;font-size:.86rem}.step p{margin:0;color:var(--muted);font-size:.78rem}.experience{padding-block:66px;border-bottom:1px solid var(--line)}.experience-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:8%;align-items:center}.experience h2{margin:0;font-size:clamp(2rem,3.7vw,3rem)}.experience-copy p{max-width:720px;margin:0;color:#345955}.credential-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.credential-row span{padding:6px 10px;border:1px solid var(--line);border-radius:3px;color:#375f58;font-size:.69rem;font-weight:650}.contact{padding-block:clamp(70px,9vw,106px);background:var(--wash);border-top:1px solid var(--line)}.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:8%;align-items:start}.contact-copy h2{max-width:480px;margin-bottom:15px}.contact-copy>p:not(.eyebrow){max-width:420px;color:var(--muted)}.expectation{margin-top:22px;padding-top:17px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}.honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.form{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:26px;border:1px solid var(--line);border-radius:6px;background:white;box-shadow:0 12px 34px rgb(21 59 57 / 5%)}.field{display:flex;flex-direction:column;gap:5px;color:var(--ink);font-size:.75rem;font-weight:700}.field.full{grid-column:1/-1}input,select,textarea{width:100%;min-height:45px;padding:10px 12px;border:1px solid #9db7b0;border-radius:3px;background:#fcfdfc;color:var(--ink);font:400 .88rem/1.4 var(--sans)}textarea{min-height:90px;resize:vertical}.form .button{margin-top:2px}.form-note{grid-column:1/-1;margin:0;color:var(--muted);font-size:.68rem}footer{background:var(--paper)}.footer-row{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px;color:var(--muted);font-size:.75rem}.footer-brand{color:var(--ink);font:700 1rem/1 var(--serif)}
+    @media(max-width:850px){.hero-grid{grid-template-columns:1fr .85fr;gap:3%}.orbit{width:290px}.ops-layout,.process-grid{gap:5%}.support-card{padding:25px}}
+    @media(max-width:700px){html{scroll-padding-top:132px}.wrap{width:min(100% - 36px,560px)}.header-row{min-height:70px;flex-wrap:wrap;gap:10px;padding-block:10px}.brand img{width:39px;height:39px}nav{order:3;width:100%;justify-content:space-between;padding:2px 0 3px}nav a{font-size:.78rem}.header-cta{margin-left:auto;min-height:38px;padding:8px 11px;font-size:.77rem}.hero-grid{min-height:0;grid-template-columns:1fr;padding-block:48px 35px}.hero-art{min-height:270px;margin-top:5px}.orbit{width:245px}.focus-card{width:min(84%,350px);padding:21px}.section{padding-block:64px}.section-intro{margin-bottom:30px}.ops-layout,.process-grid,.experience-grid,.contact-grid{grid-template-columns:1fr;gap:28px}.ops-layout h2{margin-bottom:0}.ops-foot{margin-left:0}.support{grid-template-columns:1fr;gap:12px}.support-card{min-height:0;padding:24px}.support-card .number{margin-bottom:18px}.steps{gap:12px}.experience{padding-block:48px}.experience-grid{gap:19px}.contact-grid{gap:25px}.form{padding:21px}.trust-row{align-items:flex-start;flex-direction:column;justify-content:center;gap:12px;padding-block:18px}.trust-points{justify-content:flex-start}}
+    @media(max-width:440px){.brand{font-size:1.03rem}h1{font-size:clamp(2.7rem,10.5vw,3.5rem)}.hero-copy{font-size:1rem}.steps{grid-template-columns:1fr}.step{display:grid;grid-template-columns:30px 1fr;column-gap:9px;padding-top:13px}.step b{grid-row:span 2}.step strong{margin:0 0 4px}.step p{grid-column:2}.form{grid-template-columns:1fr}.field.full,.form-note{grid-column:auto}.footer-row{align-items:flex-start;flex-direction:column;justify-content:center;gap:8px;padding-block:18px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-row">
-      <a class="brand" href="#top" aria-label="Thomas Advising home"><img class="brand-logo" src="./assets/TA-Logo-Color.png" alt=""><span>Thomas Advising</span></a>
-      <nav aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#operations">Operations</a>
-        <a href="#about">About</a>
-      </nav>
-      <a class="button header-cta" href="#contact">Let’s talk <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="eyebrow">Strategy · Operations · Events</p>
-          <h1>Thoughtful strategy. Dependable execution.</h1>
-          <p class="hero-copy">Practical support for the work that helps an organization grow, run smoothly, and bring people together.</p>
-          <div class="hero-actions"><a class="button" href="#contact">Let’s talk <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-          <p class="hero-note">Marketing · Business operations · Event management</p>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="orbit"><span class="orbit-dot"></span></div>
-          <div class="overview-card">
-            <div class="card-top"><strong>A clearer way forward</strong><span class="status">In motion</span></div>
-            <div class="overview-row"><span class="row-icon"><svg viewBox="0 0 24 24"><path d="M4 18V6m0 12h16M8 14l3-3 3 2 5-6"/></svg></span><span class="row-label">Business priorities<span class="row-sub">Focus and follow-through</span></span><span class="row-no">01</span></div>
-            <div class="overview-row"><span class="row-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1a6 6 0 0 1 12 0v1m2-10a3 3 0 1 0 0-6m1 10a5 5 0 0 1 3 4v1"/></svg></span><span class="row-label">People &amp; projects<span class="row-sub">The right details, coordinated</span></span><span class="row-no">02</span></div>
-            <div class="overview-row"><span class="row-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18m-13 5 2 2 5-5"/></svg></span><span class="row-label">Meaningful moments<span class="row-sub">Events that feel well considered</span></span><span class="row-no">03</span></div>
-          </div>
-          <div class="floating-note"><small>Thoughtful, hands-on</small><strong>From planning through delivery</strong></div>
-        </div>
+  <header class="site-header"><div class="wrap header-row">
+    <a class="brand" href="#top"><img src="./assets/TA-Logo-Color.png" alt=""><span>Thomas Advising</span></a>
+    <nav aria-label="Main navigation"><a href="#services">Services</a><a href="#approach">How it works</a><a href="#about">About</a></nav>
+    <a class="button header-cta" href="#contact">Request an intro call <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div></header>
+  <main id="top">
+    <section class="hero"><div class="wrap hero-grid">
+      <div><p class="eyebrow">Part-time operations · Projects · Events</p>
+        <h1>Keep the important work moving.</h1>
+        <p class="hero-copy">Experienced operations support and hands-on coordination for small organizations that need steady follow-through without adding a full-time role.</p>
+        <div class="hero-actions"><a class="button" href="#contact">Request an intro call <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        <p class="microcopy">A practical first conversation to find the right level of support.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit"></div><div class="focus-card">
+        <div class="focus-top"><strong>What needs to move forward?</strong><span class="pill">Hands-on help</span></div>
+        <div class="focus-row"><span class="icon">01</span><span><strong>Operations</strong><small>Priorities, people and day-to-day follow-through</small></span></div>
+        <div class="focus-row"><span class="icon">02</span><span><strong>Projects &amp; events</strong><small>Plans, partners, schedules and delivery</small></span></div>
+        <div class="focus-row"><span class="icon">03</span><span><strong>Digital presence</strong><small>Website care and ongoing communications</small></span></div>
+      </div></div>
+    </div></section>
+    <section class="trust-strip"><div class="wrap trust-row"><p>One experienced partner for the work your team needs to get done.</p><div class="trust-points"><span>Financial services</span><span>Healthcare</span><span>Hospitality</span><span>Growing organizations</span></div></div></section>
+    <section class="operations section" id="services"><div class="wrap ops-layout">
+      <div class="section-intro"><p class="eyebrow">Lead service · Business operations</p><h2>Experienced support, sized to your business.</h2><p>Get perspective, focused project help, or ongoing part-time management—with clear responsibilities and a scope that fits your needs.</p></div>
+      <div><div class="offer-list">
+        <article class="offer"><span class="offer-no">01</span><div><h3>Operations assessment</h3><p>Talk through what’s working, where support is needed, and which next steps would make the biggest difference.</p></div></article>
+        <article class="offer"><span class="offer-no">02</span><div><h3>Focused project support</h3><p>Bring in a steady partner for a defined initiative, transition, or period when the team needs extra capacity.</p></div></article>
+        <article class="offer"><span class="offer-no">03</span><div><h3>Part-time operations management</h3><p>Delegate agreed responsibilities to an experienced manager, with clear time, authority, and accountability.</p></div></article>
+      </div><p class="ops-foot">A flexible alternative when the work is real, but a full-time hire isn’t the right fit.</p></div>
+    </div></section>
+    <section class="wrap section" id="support"><div class="section-intro"><p class="eyebrow">Additional ways to help</p><h2>Support for the moments that matter.</h2><p>Bring in project-based help with the work that keeps your organization visible and brings your people together.</p></div>
+      <div class="support">
+        <article class="support-card"><span class="number">02 · Event management</span><h3>Bring your event together.</h3><p>From planning and vendor coordination to event-day logistics, get an organized partner who keeps the details moving.</p><ul><li>Planning &amp; timelines</li><li>Vendor coordination</li><li>On-site support</li></ul></article>
+        <article class="support-card"><span class="number">03 · Marketing &amp; digital presence</span><h3>Keep your communications current.</h3><p>Practical support to help people find and stay connected to your organization.</p><ul><li>Website updates &amp; care</li><li>Email marketing</li><li>Basic social presence</li></ul></article>
       </div>
     </section>
-
-    <section class="intro-band" aria-label="Our approach">
-      <div class="wrap intro-band-inner"><p>One experienced partner for the work behind your next stage of growth.</p><span>Clarity · Care · Follow-through</span></div>
-    </section>
-
-    <section class="wrap section" id="services">
-      <div class="section-heading">
-        <p class="eyebrow">What we do</p>
-        <h2>Support where it matters most.</h2>
-        <p>Choose the kind of support you need today. Each engagement is shaped around your organization, your people, and the work ahead.</p>
-      </div>
-      <div class="service-grid">
-        <article class="service-card">
-          <div class="service-kicker"><span>01 · Reach</span><span class="service-symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3m-3 3h8"/></svg></span></div>
-          <h3>Marketing &amp; Digital Presence</h3>
-          <p>Make it easier for the right people to find, understand, and stay connected to your organization.</p>
-          <ul class="service-list"><li>Website design &amp; care</li><li>Email marketing</li><li>Social presence</li></ul>
-        </article>
-        <article class="service-card">
-          <div class="service-kicker"><span>02 · Run</span><span class="service-symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16M7 15l4-4 3 2 5-6m-4 0h4v4"/></svg></span></div>
-          <h3>Business Operations</h3>
-          <p>Get an experienced partner to help assess, plan, and manage the work that keeps your business moving.</p>
-          <ul class="service-list"><li>Operations strategy</li><li>Contracted management</li><li>Team coordination</li></ul>
-        </article>
-        <article class="service-card">
-          <div class="service-kicker"><span>03 · Gather</span><span class="service-symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18m2 5h-4m2-2v4"/></svg></span></div>
-          <h3>Event Planning &amp; Management</h3>
-          <p>Bring people together with thoughtful planning, organized logistics, and steady event-day coordination.</p>
-          <ul class="service-list"><li>Planning &amp; vendors</li><li>Event logistics</li><li>On-site coordination</li></ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="operations" id="operations">
-      <div class="wrap section ops-grid">
-        <div class="section-heading">
-          <p class="eyebrow">Business operations</p>
-          <h2>Start with a conversation. Find the right level of support.</h2>
-          <p>Some organizations need perspective and a plan. Others need a reliable person taking responsibility for agreed parts of the work.</p>
-        </div>
-        <div>
-          <div class="ops-steps">
-            <article class="ops-step"><span class="step-no">01</span><div><h3>Operations Assessment</h3><p>Step back, talk through the business, and identify where leadership or day-to-day coordination could use support.</p></div></article>
-            <article class="ops-step"><span class="step-no">02</span><div><h3>Focused Engagement</h3><p>Get hands-on help with a defined operational need, transition, or period of increased activity.</p></div></article>
-            <article class="ops-step"><span class="step-no">03</span><div><h3>Contracted Operations Management</h3><p>Bring in ongoing, part-time management for agreed responsibilities, with clear time, authority, and accountability.</p></div></article>
-          </div>
-          <p class="ops-foot">A practical fit for growing organizations that need experienced support without adding a full-time role.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap section events" id="events">
-      <div class="event-visual" aria-hidden="true">
-        <div class="event-sheet"><small>Event outline</small><h3>Bring the details together.</h3><div class="event-line"><b></b>People &amp; purpose</div><div class="event-line"><b></b>Place &amp; partners</div><div class="event-line"><b></b>Plan &amp; production</div></div>
-      </div>
-      <div class="events-copy">
-        <p class="eyebrow">Event planning &amp; management</p>
-        <h2>Make the gathering feel effortless.</h2>
-        <p>From the first planning conversation to the final detail on event day, get a thoughtful partner to keep people, vendors, and logistics moving together.</p>
-        <div class="event-points"><span>Purpose &amp; planning</span><span>Budget &amp; timelines</span><span>Vendor coordination</span><span>Event-day management</span></div>
-      </div>
-    </section>
-
-    <section class="experience" id="about">
-      <div class="wrap experience-inner">
-        <h2>Experience that sees the whole picture.</h2>
-        <div class="experience-copy">
-          <p>Thomas Advising has supported clients across healthcare, financial services, hospitality, and other industries. The work draws on experience in event planning, business operations, digital marketing, technology, and practical applications of artificial intelligence.</p>
-          <div class="credentials"><span>Event planning</span><span>Business operations</span><span>Digital marketing</span><span>Technology &amp; AI</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="wrap contact-grid">
-        <div class="contact-copy">
-          <p class="eyebrow">Start a conversation</p>
-          <h2>Tell us what you’re working on.</h2>
-          <p>Share a little about the support you’re looking for. We’ll start with a conversation and find the right next step together.</p>
-          <div class="contact-aside">Marketing · Business operations · Events · Not sure yet</div>
-        </div>
-        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xvkaqjwa" method="post">
-          <input type="hidden" name="_subject" value="New Thomas Advising website inquiry">
-          <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <label class="field">Your name<input name="name" autocomplete="name" placeholder="Name" required></label>
-          <label class="field">Email address<input type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
-          <label class="field full">What can we help with?<select name="service"><option>Marketing &amp; digital presence</option><option>Business operations</option><option>Event planning &amp; management</option><option>Not sure yet</option></select></label>
-          <label class="field full">A little about your needs<textarea name="message" placeholder="What would you like help moving forward?" required></textarea></label>
-          <button class="button" type="submit">Let’s talk <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <p class="form-note">Share a few details so we can follow up about your inquiry.</p>
-        </form>
-      </div>
-    </section>
+    <section class="process" id="approach"><div class="wrap section process-grid"><div><p class="eyebrow">A clear first step</p><h2>Start with the need. Shape the support around it.</h2></div><div class="steps">
+      <div class="step"><b>01</b><strong>Talk it through</strong><p>Share what’s on your plate and where you need help.</p></div>
+      <div class="step"><b>02</b><strong>Agree on a scope</strong><p>Choose a project or ongoing support with clear expectations.</p></div>
+      <div class="step"><b>03</b><strong>Move it forward</strong><p>Coordinate the work and keep people aligned on next steps.</p></div>
+    </div></div></section>
+    <section class="experience" id="about"><div class="wrap experience-grid"><h2>Experience across the work behind a growing organization.</h2><div class="experience-copy"><p>Thomas Advising brings together experience in business operations, technology operations, cybersecurity, digital marketing, and event planning—across financial services, healthcare, hospitality, and other industries.</p><div class="credential-row"><span>Community banking technology operations</span><span>Cybersecurity education</span><span>Marketing &amp; events</span></div></div></div></section>
+    <section class="contact" id="contact"><div class="wrap contact-grid"><div class="contact-copy"><p class="eyebrow">Request an introductory call</p><h2>Tell us what you need to move forward.</h2><p>Share a little about your organization and the kind of support you’re looking for. We’ll start with a conversation and see whether the fit is right.</p><div class="expectation">A low-pressure first conversation. No need to have the full scope figured out yet.</div></div>
+      <form class="form" action="https://formspree.io/f/xvkaqjwa" method="post">
+        <input type="hidden" name="_subject" value="New Thomas Advising intro call request">
+        <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="field">Your name<input name="name" autocomplete="name" placeholder="Name" required></label>
+        <label class="field">Email address<input type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
+        <label class="field full">What kind of support are you looking for?<select name="support"><option value="">Choose one</option><option>Part-time operations support</option><option>Operations project</option><option>Event management</option><option>Website or marketing support</option><option>Not sure yet</option></select></label>
+        <label class="field full">What would you like to move forward? <span style="font-weight:400;color:var(--muted)">(optional)</span><textarea name="message" placeholder="A sentence or two is plenty."></textarea></label>
+        <button class="button" type="submit">Request an intro call <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <p class="form-note">A low-pressure first conversation. No need to have the full scope figured out yet.</p>
+      </form>
+    </div></section>
   </main>
-  <footer>
-    <div class="wrap footer-row"><span class="footer-brand">Thomas Advising</span><span>Thoughtful strategy. Dependable execution.</span><span>© 2026 Thomas Advising</span></div>
-  </footer>
+  <footer><div class="wrap footer-row"><span class="footer-brand">Thomas Advising</span><span>Thoughtful strategy. Dependable execution.</span><span>© 2026 Thomas Advising</span></div></footer>
 </body>
 </html>
