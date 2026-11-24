@@ -128,6 +128,7 @@
     .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 28px; border: 1px solid var(--line); border-radius: 6px; background: var(--white); box-shadow: 0 12px 34px rgb(21 59 57 / 5%); }
     .field { display: flex; flex-direction: column; gap: 5px; color: var(--ink); font-size: .78rem; font-weight: 700; }
     .field.full { grid-column: 1 / -1; }
+    .honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
     input, select, textarea { width: 100%; min-height: 46px; border: 1px solid #9db7b0; border-radius: 3px; padding: 10px 12px; background: #fcfdfc; color: var(--ink); font: 400 .9rem/1.4 var(--sans); }
     textarea { min-height: 112px; resize: vertical; }
     .contact-form .button { margin-top: 3px; justify-self: start; }
@@ -301,6 +302,7 @@
         </div>
         <form class="contact-form" id="contact-form" action="https://formspree.io/f/xvkaqjwa" method="post">
           <input type="hidden" name="_subject" value="New Thomas Advising website inquiry">
+          <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
           <label class="field">Your name<input name="name" autocomplete="name" placeholder="Name" required></label>
           <label class="field">Email address<input type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
           <label class="field full">What can we help with?<select name="service"><option>Marketing &amp; digital presence</option><option>Business operations</option><option>Event planning &amp; management</option><option>Not sure yet</option></select></label>
